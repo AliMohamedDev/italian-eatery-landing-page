@@ -136,9 +136,12 @@ section {
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-.hero__scroll:hover {
+.hero__scroll:hover,
+.hero__scroll:focus-visible {
   border-color: var(--warm-white);
   background: rgba(255,252,247,0.1);
+  outline: 2px solid var(--warm-white);
+  outline-offset: 3px;
 }
 
 @keyframes bounce {
@@ -391,8 +394,7 @@ section {
 
 .review-card__author {
   font-size: 0.75rem;
-  color: var(--charcoal);
-  opacity: 0.45;
+  color: #7A7370;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -438,7 +440,7 @@ section {
   margin-bottom: 1.5rem;
 }
 
-.visit__detail h4 {
+.visit__detail h3 {
   font-size: 0.68rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -514,8 +516,7 @@ section {
 
 .footer__phone a {
   font-size: 0.875rem;
-  color: var(--cream);
-  opacity: 0.45;
+  color: #A89E99;
   text-decoration: none;
 }
 
