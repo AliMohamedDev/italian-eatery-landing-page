@@ -1,0 +1,16 @@
+Color Palette & Style:
+
+Terracotta (#C4735A) as the primary accent color
+Olive green (#6B7A4A) for menu section headers
+Cream (#F8F4EE) and warm white (#FFFCF7) backgrounds
+Deep charcoal (#2C2824) for text
+Typography pairing: Crimson Pro (elegant serif) for headings and Inter (clean sans-serif) for body text
+Sections Include:
+
+Cinematic Hero: Full-screen imagery with a bold headline "Cooking from the Heart" and smooth scroll animation
+Our Story: Personal family narrative with beautiful imagery, telling Nonna Maria's journey from Naples
+Menu: Beautifully typeset sections (Antipasti, Primi, Secondi, Dolci) with intentional spacing and elegant borders
+Featured Specialties: Three signature dishes with hover effects and staggered animations
+Contact & Hours: Complete information with location, phone, email, and operating hours, plus a warm welcome message
+Footer: Simple and tasteful with a touch of personality
+
