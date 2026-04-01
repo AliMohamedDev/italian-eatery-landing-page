@@ -374,6 +374,8 @@ section {
   padding: 2rem;
   border-radius: 2px;
   border-left: 3px solid var(--terracotta);
+  display: flex;
+  flex-direction: column;
 }
 
 .review-card__stars {
@@ -397,6 +399,7 @@ section {
   color: #7A7370;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  margin-top: auto;
 }
 
 @media (min-width: 768px) {
