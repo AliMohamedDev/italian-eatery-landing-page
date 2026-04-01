@@ -284,3 +284,51 @@ section {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* =========================================
+   SPECIALTIES
+   ========================================= */
+
+.specialties {
+  background: var(--warm-white);
+}
+
+.specialties__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.specialty-card {
+  background: var(--cream);
+  border-top: 3px solid var(--terracotta);
+  padding: 2.25rem 2rem;
+  border-radius: 2px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.specialty-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(44, 40, 36, 0.09);
+}
+
+.specialty-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  color: var(--charcoal);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.specialty-card__desc {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--charcoal);
+  opacity: 0.72;
+}
+
+@media (min-width: 768px) {
+  .specialties__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
