@@ -145,3 +145,71 @@ section {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(9px); }
 }
+
+/* =========================================
+   OUR STORY
+   ========================================= */
+
+.story {
+  background: var(--warm-white);
+}
+
+.story__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.story__label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 1rem;
+}
+
+.story__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.6rem);
+  color: var(--charcoal);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.story__text {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--charcoal);
+  opacity: 0.82;
+}
+
+.story__text + .story__text {
+  margin-top: 1rem;
+}
+
+.story__accent {
+  background: var(--cream);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 2.5rem;
+  min-height: 280px;
+}
+
+.story__accent-quote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 3vw, 1.65rem);
+  color: var(--terracotta);
+  text-align: center;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+@media (min-width: 768px) {
+  .story__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
