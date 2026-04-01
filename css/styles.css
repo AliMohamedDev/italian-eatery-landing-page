@@ -523,6 +523,22 @@ section {
   text-decoration: none;
 }
 
+.footer__instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  color: #A89E99;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  transition: color 0.2s ease;
+}
+
+.footer__instagram:hover {
+  color: var(--terracotta);
+}
+
 .footer__phone a:hover {
   opacity: 0.8;
 }
