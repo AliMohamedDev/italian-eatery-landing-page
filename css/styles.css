@@ -213,3 +213,74 @@ section {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* =========================================
+   MENU
+   ========================================= */
+
+.menu {
+  background: var(--cream);
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.menu__category {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1.5px solid var(--olive);
+}
+
+.menu__list {
+  list-style: none;
+}
+
+.menu__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.6rem 0;
+  font-size: 0.95rem;
+  border-bottom: 1px dotted rgba(44, 40, 36, 0.15);
+  gap: 1rem;
+}
+
+.menu__item:last-child {
+  border-bottom: none;
+}
+
+.menu__price {
+  color: var(--terracotta);
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.menu__note {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 0.85rem;
+  color: var(--charcoal);
+  opacity: 0.55;
+  font-style: italic;
+}
+
+@media (min-width: 600px) {
+  .menu__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
