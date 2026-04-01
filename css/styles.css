@@ -522,3 +522,61 @@ section {
 .footer__phone a:hover {
   opacity: 0.8;
 }
+
+/* =========================================
+   RESPONSIVE POLISH
+   ========================================= */
+
+/* Mobile — up to 480px */
+@media (max-width: 480px) {
+  section {
+    padding: 3.5rem 0;
+  }
+
+  .hero__title {
+    font-size: 2.4rem;
+  }
+
+  .hero__subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .story__accent {
+    min-height: 200px;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .specialty-card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .review-card {
+    padding: 1.5rem;
+  }
+
+  .visit__map iframe {
+    height: 300px;
+  }
+
+  .footer {
+    padding: 2rem 0;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero__scroll {
+    animation: none;
+  }
+
+  .specialty-card {
+    transition: none;
+  }
+}
