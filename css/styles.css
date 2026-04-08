@@ -403,16 +403,6 @@ section {
   align-items: center;
 }
 
-.story__label {
-  font-family: var(--font);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--green);
-  margin-bottom: 1rem;
-}
-
 .story__title {
   font-family: var(--font);
   font-size: clamp(1.75rem, 4vw, 2.6rem);
@@ -435,22 +425,32 @@ section {
 }
 
 .story__accent {
-  background: var(--red);
-  border-radius: 8px;
+  position: relative;
+  background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 100%);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3.5rem 2.5rem;
+  padding: 3rem 2.5rem;
   min-height: 280px;
+  overflow: hidden;
+}
+
+.story__accent::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.07) 0%, transparent 60%);
 }
 
 .story__accent-quote {
+  position: relative;
   font-family: var(--font);
-  font-size: clamp(1.3rem, 3vw, 1.65rem);
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
   font-weight: 700;
   color: #FFFFFF;
   text-align: center;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 @media (min-width: 768px) {
