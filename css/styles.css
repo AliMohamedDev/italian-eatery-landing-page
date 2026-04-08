@@ -63,12 +63,43 @@ section {
   font-weight: 800;
   color: var(--text);
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 0.75rem;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
-/* Fade-in animation class — JS adds .visible when element enters viewport */
+.section-accent {
+  width: 40px;
+  height: 3px;
+  background: var(--red);
+  margin: 0 auto 3rem;
+  border-radius: 2px;
+}
+
+/* Colorful badge component */
+.badge {
+  display: inline-block;
+  font-family: var(--font);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.badge--green {
+  background: var(--green);
+  color: #FFFFFF;
+}
+
+.badge--red-light {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+/* Fade-in animation */
 .fade-in {
   opacity: 0;
   transform: translateY(24px);
