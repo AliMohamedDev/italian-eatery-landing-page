@@ -3,12 +3,13 @@
    ========================================= */
 
 :root {
-  --red: #E63535;
-  --red-dark: #B91C1C;
-  --green: #1F7A4A;
-  --gold: #F59E0B;
+  --red: #DC2626;
+  --red-dark: #991B1B;
+  --red-light: #FEE2E2;
+  --green: #16A34A;
+  --gold: #D97706;
   --surface: #FFFFFF;
-  --parchment: #FFF8F0;
+  --parchment: #FFF7ED;
   --text: #111827;
   --text-muted: #6B7280;
   --font: 'Inter', sans-serif;
