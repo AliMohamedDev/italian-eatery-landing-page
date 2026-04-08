@@ -3,13 +3,15 @@
    ========================================= */
 
 :root {
-  --terracotta: #8B1A1A;
-  --olive: #C9A84C;
-  --cream: #F2EBE0;
-  --warm-white: #FAF7F2;
-  --charcoal: #1C1410;
-  --font-heading: 'Crimson Pro', serif;
-  --font-body: 'Inter', sans-serif;
+  --red: #E63535;
+  --red-dark: #B91C1C;
+  --green: #1F7A4A;
+  --gold: #F59E0B;
+  --surface: #FFFFFF;
+  --parchment: #FFF8F0;
+  --text: #111827;
+  --text-muted: #6B7280;
+  --font: 'Inter', sans-serif;
 }
 
 /* =========================================
@@ -27,9 +29,9 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
-  color: var(--charcoal);
-  background: var(--warm-white);
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--surface);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -55,12 +57,14 @@ section {
 }
 
 .section-title {
-  font-family: var(--font-heading);
+  font-family: var(--font);
   font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--charcoal);
+  font-weight: 800;
+  color: var(--text);
   text-align: center;
   margin-bottom: 3rem;
-  line-height: 1.15;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 /* Fade-in animation class — JS adds .visible when element enters viewport */
