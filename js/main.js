@@ -30,3 +30,33 @@ var observer = new IntersectionObserver(function(entries) {
 document.querySelectorAll('.fade-in').forEach(function(el) {
   observer.observe(el);
 });
+
+// Nav scroll behavior — adds .scrolled class when page is scrolled
+var nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 10) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }, { passive: true });
+}
+
+// Mobile menu toggle
+var hamburger = document.getElementById('nav-hamburger');
+var mobileMenu = document.getElementById('nav-mobile');
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', function() {
+    var isOpen = mobileMenu.classList.toggle('nav__mobile--open');
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // Close menu when a link inside it is clicked
+  mobileMenu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobileMenu.classList.remove('nav__mobile--open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
