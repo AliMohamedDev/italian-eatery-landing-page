@@ -7,7 +7,7 @@
   <title>Main Street Italian Eatery | Milton, ON</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -15,14 +15,25 @@
   <!-- Navigation -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#home" class="nav__brand">Main Street Italian Eatery</a>
+      <a href="#home" class="nav__brand">
+        <img src="Italian_cooking_icon.svg.png" alt="" class="nav__brand-logo" aria-hidden="true">
+        <span class="nav__brand-text">
+          <span class="nav__brand-top">Main Street</span>
+          <span class="nav__brand-bottom">Italian Eatery</span>
+        </span>
+      </a>
       <ul class="nav__links">
         <li><a href="#story">Our Story</a></li>
         <li><a href="#menu">Menu</a></li>
         <li><a href="#specialties">Specialties</a></li>
         <li><a href="#reviews">Reviews</a></li>
         <li><a href="#visit">Visit</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+      <button class="nav__theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="nav__theme-icon nav__theme-icon--sun">&#9728;</span>
+        <span class="nav__theme-icon nav__theme-icon--moon">&#9790;</span>
+      </button>
       <a href="tel:+19058782938" class="nav__cta">Call Now</a>
       <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
     </div>
@@ -32,12 +43,14 @@
       <a href="#specialties">Specialties</a>
       <a href="#reviews">Reviews</a>
       <a href="#visit">Visit</a>
+      <a href="#contact">Contact</a>
       <a href="tel:+19058782938" class="nav__mobile-cta">Call (905) 878-2938</a>
     </div>
   </nav>
 
   <!-- 1. Hero -->
   <section class="hero" id="home">
+    <img src="store.jpg" alt="" class="hero__bg" aria-hidden="true">
     <div class="hero__overlay"></div>
     <!-- Scattered icon pattern — right side of hero -->
     <div class="ip-wrap" aria-hidden="true">
@@ -48,13 +61,16 @@
       <img src="coffeendonut.png" alt="" style="width:82px;  bottom:9%; right:38%; transform:rotate(9deg);  opacity:0.45;">
     </div>
     <div class="hero__content container">
-      <span class="badge badge--red-light">● Open Tue–Sat &nbsp;·&nbsp; 7 AM – 6 PM</span>
       <h1 class="hero__title">Cooking from<br>the Heart</h1>
       <p class="hero__subtitle">Homemade Italian, made fresh daily in Milton, ON</p>
       <div class="hero__actions">
         <a href="tel:+19058782938" class="btn btn--primary">Call (905) 878-2938</a>
         <a href="#menu" class="btn btn--outline">View Menu</a>
       </div>
+    </div>
+    <div class="hero__hours">
+      <span class="hero__hours-dot"></span>
+      Open Tue–Sat &nbsp;·&nbsp; 7 AM – 6 PM
     </div>
     <a href="#story" class="hero__scroll" aria-label="Scroll down to Our Story">&#8595;</a>
   </section>
@@ -161,31 +177,63 @@
       <h2 class="section-title fade-in">What People Are Saying</h2>
       <div class="reviews__stat fade-in">
         <div class="reviews__stat-score">
-          <span class="reviews__stat-star" aria-hidden="true">&#9733;</span>
           <span class="reviews__stat-number">4.7</span>
+          <span class="reviews__stat-star" aria-hidden="true">&#9733;</span>
         </div>
         <p class="reviews__stat-label">based on Google Reviews</p>
       </div>
-      <div class="reviews__grid">
+      <div class="reviews__scroll-wrap">
+        <div class="reviews__grid">
 
-        <div class="review-card fade-in">
-          <div class="review-card__stars" aria-label="5 out of 5 stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-          <p class="review-card__quote">"Big portions and great taste!"</p>
-          <p class="review-card__author">Google Reviewer</p>
+          <div class="review-card">
+            <div class="review-card__stars" aria-label="5 out of 5 stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+            <p class="review-card__quote">"Big portions and great taste!"</p>
+            <p class="review-card__author">2001Soccermom &mdash; TripAdvisor</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card__stars" aria-label="5 out of 5 stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+            <p class="review-card__quote">"Genuinely kind people who go out of their way to make sure everything is fresh — from their pasta to veal, chicken and lasagna."</p>
+            <p class="review-card__author">B4019SSdebram &mdash; TripAdvisor</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card__stars" aria-label="5 out of 5 stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+            <p class="review-card__quote">"Probably the best lasagna I've had in Canada!"</p>
+            <p class="review-card__author">Ries B &mdash; TripAdvisor</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card__stars" aria-label="5 out of 5 stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+            <p class="review-card__quote">"Chicken parm sandwich is hands down the best!"</p>
+            <p class="review-card__author">Julie C &mdash; TripAdvisor</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card__stars" aria-label="5 out of 5 stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+            <p class="review-card__quote">"The sandwiches are great and there's a real family feeling. You leave with a full stomach and a smile."</p>
+            <p class="review-card__author">Antonino G &mdash; TripAdvisor</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card__stars" aria-label="5 out of 5 stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+            <p class="review-card__quote">"Small town spirit — great food and an incredible kindness from this establishment."</p>
+            <p class="review-card__author">Joyce B &mdash; TripAdvisor</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card__stars" aria-label="4 out of 5 stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div>
+            <p class="review-card__quote">"The quality of the food is always outstanding. Great bang for your buck."</p>
+            <p class="review-card__author">Old-Eye &mdash; TripAdvisor</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-card__stars" aria-label="5 out of 5 stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+            <p class="review-card__quote">"Better than fancy sit-down Italian places. AMAZING!!!"</p>
+            <p class="review-card__author">Meg M &mdash; TripAdvisor</p>
+          </div>
+
         </div>
-
-        <div class="review-card fade-in">
-          <div class="review-card__stars" aria-label="5 out of 5 stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-          <p class="review-card__quote">"Great quality, price AND most importantly, they treat you like family."</p>
-          <p class="review-card__author">Google Reviewer</p>
-        </div>
-
-        <div class="review-card fade-in">
-          <div class="review-card__stars" aria-label="5 out of 5 stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-          <p class="review-card__quote">"They go out of their way to make sure everything is fresh."</p>
-          <p class="review-card__author">Google Reviewer</p>
-        </div>
-
       </div>
     </div>
   </section>
@@ -241,7 +289,41 @@
     </div>
   </section>
 
-  <!-- 7. Footer -->
+  <!-- 7. Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title fade-in">Send Us a Message</h2>
+      <div class="section-accent"></div>
+      <div class="contact__wrap fade-in">
+        <p class="contact__intro">Have a question, want to place an order ahead, or just want to say hi? We'd love to hear from you.</p>
+        <form class="contact__form" id="contact-form" novalidate>
+          <div class="contact__row">
+            <div class="contact__field">
+              <label for="contact-name">Your Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="e.g. Maria Rossi" autocomplete="name" required />
+            </div>
+            <div class="contact__field">
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" name="email" placeholder="you@email.com" autocomplete="email" required />
+            </div>
+          </div>
+          <div class="contact__field">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="5" placeholder="Ask us anything…" required></textarea>
+          </div>
+          <div class="contact__footer">
+            <button type="submit" class="btn btn--primary">Send Message</button>
+            <p class="contact__note">We'll get back to you by phone or email.</p>
+          </div>
+        </form>
+        <div class="contact__success" id="contact-success" aria-live="polite" hidden>
+          <span>&#10003;</span> Thanks! We'll be in touch soon.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Footer -->
   <footer class="footer">
     <div class="container">
       <p class="footer__name">Main Street Italian Eatery</p>

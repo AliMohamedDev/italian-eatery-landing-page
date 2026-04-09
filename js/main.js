@@ -60,3 +60,60 @@ if (hamburger && mobileMenu) {
     });
   });
 }
+
+// Reviews drag-to-scroll
+var reviewsWrap = document.querySelector('.reviews__scroll-wrap');
+if (reviewsWrap) {
+  var isDown = false;
+  var startX, scrollLeft;
+
+  reviewsWrap.addEventListener('mousedown', function(e) {
+    isDown = true;
+    startX = e.pageX - reviewsWrap.offsetLeft;
+    scrollLeft = reviewsWrap.scrollLeft;
+  });
+  reviewsWrap.addEventListener('mouseleave', function() { isDown = false; });
+  reviewsWrap.addEventListener('mouseup', function() { isDown = false; });
+  reviewsWrap.addEventListener('mousemove', function(e) {
+    if (!isDown) return;
+    e.preventDefault();
+    var x = e.pageX - reviewsWrap.offsetLeft;
+    reviewsWrap.scrollLeft = scrollLeft - (x - startX);
+  });
+}
+
+// Dark / light mode toggle
+var themeToggle = document.getElementById('theme-toggle');
+var root = document.documentElement;
+
+// Load saved preference or system preference
+var savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  root.setAttribute('data-theme', savedTheme);
+} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  root.setAttribute('data-theme', 'dark');
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', function() {
+    var current = root.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+}
+
+// Contact form — show success message on submit
+var contactForm = document.getElementById('contact-form');
+var contactSuccess = document.getElementById('contact-success');
+if (contactForm && contactSuccess) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+    contactForm.style.display = 'none';
+    contactSuccess.style.display = 'flex';
+  });
+}
