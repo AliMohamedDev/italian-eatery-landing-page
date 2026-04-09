@@ -7,7 +7,7 @@
   <title>Main Street Italian Eatery | Milton, ON</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Fredoka+One&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -73,6 +73,9 @@
       Open Tue–Sat &nbsp;·&nbsp; 7 AM – 6 PM
     </div>
     <a href="#story" class="hero__scroll" aria-label="Scroll down to Our Story">&#8595;</a>
+    <div class="hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 C180,110 360,10 540,55 C720,100 900,15 1080,60 C1260,100 1380,30 1440,50 L1440,120 L0,120 Z" fill="var(--cream)"/></svg>
+    </div>
   </section>
 
   <!-- 2. Our Story -->
@@ -89,8 +92,8 @@
         <div class="story__copy">
           <span class="badge badge--green">Our Story</span>
           <h2 class="story__title">Made with love,<br>served with pride</h2>
-          <p class="story__text">We're a small family-run kitchen in the heart of Milton. We cook the way our family has always cooked: from scratch, every single day. No shortcuts. Just honest, homemade Italian food the way it was meant to taste.</p>
-          <p class="story__text">Whether it's a perfectly layered lasagna, a crispy chicken parm, or a fresh donut still warm from the fryer, everything that leaves our kitchen starts with real ingredients and real care. We've been feeding Milton's families for years and we're not stopping anytime soon.</p>
+          <p class="story__text">We're a cherished family-run kitchen in the heart of Milton, Ontario. We cook the way our family has always cooked — using age-old recipes passed down through generations. No shortcuts. Just honest, homemade Italian food the way it was meant to taste.</p>
+          <p class="story__text">Whether it's a perfectly layered lasagna, a crispy chicken parm, or a fresh donut still warm from the fryer, everything that leaves our kitchen starts with real ingredients and real care. We've been feeding Milton's families for years, and we're not stopping anytime soon.</p>
         </div>
         <div class="story__photo">
           <img src="image.png" alt="Inside Main Street Italian Eatery">
@@ -98,6 +101,8 @@
       </div>
     </div>
   </section>
+
+  <div class="wave-divider wave-divider--cream-to-parchment" aria-hidden="true"><svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0,55 C200,110 400,0 720,55 C1000,105 1260,5 1440,50 L1440,110 L0,110 Z" fill="var(--parchment)"/></svg></div>
 
   <!-- 3. Menu -->
   <section class="menu" id="menu">
@@ -113,22 +118,55 @@
             <li class="menu__item"><span>Gnocchi</span><span class="menu__price">$11</span></li>
             <li class="menu__item"><span>Manicotti</span><span class="menu__price">$12</span></li>
             <li class="menu__item"><span>Penne</span><span class="menu__price">$9</span></li>
+            <li class="menu__item"><span>Italian Sausage &amp; Peppers</span><span class="menu__price">$13</span></li>
           </ul>
         </div>
 
         <div class="menu__column fade-in">
-          <h3 class="menu__category">Sandwiches</h3>
+          <h3 class="menu__category">Grills &amp; Mains</h3>
+          <ul class="menu__list">
+            <li class="menu__item"><span>Grilled Steak</span><span class="menu__price">$18</span></li>
+            <li class="menu__item"><span>Chicken Wings</span><span class="menu__price">$12</span></li>
+            <li class="menu__item"><span>Veal Cutlet</span><span class="menu__price">$14</span></li>
+          </ul>
+        </div>
+
+        <div class="menu__column fade-in">
+          <h3 class="menu__category">Pizza</h3>
+          <ul class="menu__list">
+            <li class="menu__item"><span>Margherita</span><span class="menu__price">$11</span></li>
+            <li class="menu__item"><span>Pepperoni</span><span class="menu__price">$13</span></li>
+            <li class="menu__item"><span>Sausage &amp; Mushroom</span><span class="menu__price">$14</span></li>
+          </ul>
+        </div>
+
+        <div class="menu__column fade-in">
+          <h3 class="menu__category">Sandwiches &amp; Sides</h3>
           <ul class="menu__list">
             <li class="menu__item"><span>Grilled Cheese</span><span class="menu__price">$8</span></li>
             <li class="menu__item"><span>Veal Parm Sandwich</span><span class="menu__price">$10</span></li>
+            <li class="menu__item"><span>Roasted Potatoes</span><span class="menu__price">$5</span></li>
+            <li class="menu__item"><span>Tomato Cream Soup</span><span class="menu__price">$6</span></li>
           </ul>
         </div>
 
         <div class="menu__column fade-in">
-          <h3 class="menu__category">Sides</h3>
+          <h3 class="menu__category">Sweets &amp; Bakery</h3>
           <ul class="menu__list">
-            <li class="menu__item"><span>Roasted Potatoes</span><span class="menu__price">$5</span></li>
-            <li class="menu__item"><span>Tomato Cream Soup</span><span class="menu__price">$6</span></li>
+            <li class="menu__item"><span>Fresh Donuts</span><span class="menu__price">$2</span></li>
+            <li class="menu__item"><span>Croissant</span><span class="menu__price">$3</span></li>
+            <li class="menu__item"><span>Homemade Cake</span><span class="menu__price">$5</span></li>
+            <li class="menu__item"><span>Cannoli</span><span class="menu__price">$4</span></li>
+          </ul>
+        </div>
+
+        <div class="menu__column fade-in">
+          <h3 class="menu__category">Drinks</h3>
+          <ul class="menu__list">
+            <li class="menu__item"><span>Espresso</span><span class="menu__price">$3</span></li>
+            <li class="menu__item"><span>Cappuccino</span><span class="menu__price">$4</span></li>
+            <li class="menu__item"><span>Soft Drink</span><span class="menu__price">$2</span></li>
+            <li class="menu__item"><span>Bottled Water</span><span class="menu__price">$1</span></li>
           </ul>
         </div>
 
@@ -136,6 +174,8 @@
       <p class="menu__note">Call ahead to confirm availability. Cash only — ATM available on site.</p>
     </div>
   </section>
+
+  <div class="wave-divider wave-divider--parchment-to-cream" aria-hidden="true"><svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0,70 C300,10 600,110 900,45 C1100,5 1300,90 1440,55 L1440,110 L0,110 Z" fill="var(--cream)"/></svg></div>
 
   <!-- 4. Specialties -->
   <section class="specialties" id="specialties">
@@ -163,6 +203,8 @@
     </div>
   </section>
 
+  <div class="wave-divider wave-divider--cream-to-parchment" aria-hidden="true"><svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0,35 C180,95 400,5 600,60 C800,110 1050,10 1260,65 C1360,90 1420,40 1440,50 L1440,110 L0,110 Z" fill="var(--parchment)"/></svg></div>
+
   <!-- 5. Reviews -->
   <section class="reviews" id="reviews">
     <!-- Scattered icon pattern -->
@@ -176,9 +218,9 @@
     <div class="container">
       <h2 class="section-title fade-in">What People Are Saying</h2>
       <div class="reviews__stat fade-in">
-        <div class="reviews__stat-score">
-          <span class="reviews__stat-number">4.7</span>
-          <span class="reviews__stat-star" aria-hidden="true">&#9733;</span>
+        <div class="reviews__stat-number">4.7</div>
+        <div class="reviews__stat-stars" aria-label="4.7 out of 5 stars">
+          <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         </div>
         <p class="reviews__stat-label">based on Google Reviews</p>
       </div>
@@ -238,6 +280,8 @@
     </div>
   </section>
 
+  <div class="wave-divider wave-divider--parchment-to-cream wave-divider--pull" aria-hidden="true"><svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0,80 C240,20 480,105 720,50 C960,0 1200,95 1440,45 L1440,110 L0,110 Z" fill="var(--cream)"/></svg></div>
+
   <!-- 6. Visit Us -->
   <section class="visit" id="visit">
     <!-- Scattered icon pattern -->
@@ -268,6 +312,11 @@
             <p>Tue &ndash; Sat: 7:00 AM &ndash; 6:00 PM<br>Closed Sun &amp; Mon</p>
           </div>
 
+          <div class="visit__service-badges">
+            <span class="visit__service-badge">🥡 Takeout</span>
+            <span class="visit__service-badge">🍽️ Dine In</span>
+          </div>
+
           <div class="visit__note">
             <span aria-hidden="true">⚠</span>
             Cash only &mdash; ATM available in store
@@ -289,13 +338,15 @@
     </div>
   </section>
 
+  <div class="wave-divider wave-divider--cream-to-parchment" aria-hidden="true"><svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0,45 C240,105 500,5 740,60 C960,110 1200,15 1440,60 L1440,110 L0,110 Z" fill="var(--parchment)"/></svg></div>
+
   <!-- 7. Contact -->
   <section class="contact" id="contact">
     <div class="container">
       <h2 class="section-title fade-in">Send Us a Message</h2>
       <div class="section-accent"></div>
       <div class="contact__wrap fade-in">
-        <p class="contact__intro">Have a question, want to place an order ahead, or just want to say hi? We'd love to hear from you.</p>
+        <p class="contact__intro">Have a question or just want to say hi? We'd love to hear from you. For orders, please give us a call directly at <a href="tel:+19058782938">(905) 878-2938</a>.</p>
         <form class="contact__form" id="contact-form" novalidate>
           <div class="contact__row">
             <div class="contact__field">
@@ -309,7 +360,7 @@
           </div>
           <div class="contact__field">
             <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" rows="5" placeholder="Ask us anything…" required></textarea>
+            <textarea id="contact-message" name="message" rows="5" placeholder="Ask us a question, share feedback, or just say hello…" required></textarea>
           </div>
           <div class="contact__footer">
             <button type="submit" class="btn btn--primary">Send Message</button>
