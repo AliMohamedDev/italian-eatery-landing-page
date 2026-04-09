@@ -634,11 +634,19 @@ section {
   box-shadow: 0 0 6px #4ade80;
 }
 
+.hero__hours--inline {
+  display: none;
+  margin-top: 1.5rem;
+  position: static;
+  font-size: 0.8rem;
+}
+
 @media (max-width: 767px) {
-  .hero__hours {
-    left: 1rem;
-    bottom: 10rem;
-    font-size: 0.8rem;
+  .hero__hours--absolute {
+    display: none;
+  }
+  .hero__hours--inline {
+    display: flex;
   }
 }
 
