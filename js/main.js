@@ -1,3 +1,9 @@
+// Scroll to top on page load/refresh
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 // Smooth scroll for anchor links
 // (CSS scroll-behavior: smooth handles most cases, but this ensures
 // consistent behavior across browsers including Safari)
