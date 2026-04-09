@@ -1548,6 +1548,188 @@ section {
   }
 }
 
+/* =========================================
+   SECTION PROGRESS DOTS
+   ========================================= */
+
+.section-dots {
+  position: fixed;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.section-dots.visible {
+  opacity: 1;
+}
+
+.section-dots__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  opacity: 0.3;
+  display: block;
+  position: relative;
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+}
+
+.section-dots__dot::before {
+  content: attr(data-label);
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--text);
+  color: var(--surface);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+.section-dots__dot:hover {
+  opacity: 1;
+  transform: scale(1.4);
+}
+
+.section-dots__dot:hover::before {
+  opacity: 1;
+}
+
+.section-dots__dot--active {
+  background: var(--red);
+  opacity: 1;
+  transform: scale(1.35);
+}
+
+@media (max-width: 767px) {
+  .section-dots {
+    display: none;
+  }
+}
+
+/* =========================================
+   BACK TO TOP BUTTON
+   ========================================= */
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  z-index: 150;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(194, 69, 50, 0.35);
+  opacity: 0;
+  transform: translateY(12px) scale(0.85);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.18s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px) scale(1);
+}
+
+.back-to-top:active {
+  transform: translateY(0) scale(0.95);
+}
+
+@media (max-width: 767px) {
+  .back-to-top {
+    bottom: calc(80px + env(safe-area-inset-bottom) + 0.75rem);
+    right: 1rem;
+  }
+}
+
+/* =========================================
+   MENU TABS (mobile)
+   ========================================= */
+
+.menu__tabs {
+  display: none;
+  gap: 0.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu__tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.menu__tab {
+  flex-shrink: 0;
+  font-family: var(--font);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1.5px solid rgba(28, 18, 10, 0.1);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+  transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+  white-space: nowrap;
+}
+
+.menu__tab--active {
+  color: #fff;
+  background: var(--red);
+  border-color: var(--red);
+}
+
+[data-theme="dark"] .menu__tab {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 767px) {
+  .menu__tabs {
+    display: flex;
+  }
+
+  .menu__column {
+    display: none;
+  }
+
+  .menu__column.menu__column--active {
+    display: block;
+  }
+
+  /* On mobile, active column spans full width */
+  .menu__grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* Slide from left variant */
 .fade-in--left {
   opacity: 0;
