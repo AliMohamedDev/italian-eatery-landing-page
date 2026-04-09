@@ -17,25 +17,57 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
   });
 });
 
-// Fade-in on scroll using IntersectionObserver
-// Elements with class .fade-in start invisible (opacity: 0, translateY(24px))
-// When they enter the viewport, .visible is added which transitions them in
+// Scroll-triggered animations (.fade-in, .fade-in--left, .fade-in--right, .draw-in)
 var observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      // Stop observing once visible — no need to re-trigger
       observer.unobserve(entry.target);
     }
   });
 }, {
-  threshold: 0.1,       // Trigger when 10% of element is visible
-  rootMargin: '0px 0px -40px 0px'  // Start 40px before element hits bottom of viewport
+  threshold: 0.12,
+  rootMargin: '0px 0px -40px 0px'
 });
 
-document.querySelectorAll('.fade-in').forEach(function(el) {
+document.querySelectorAll('.fade-in, .fade-in--left, .fade-in--right, .draw-in').forEach(function(el) {
   observer.observe(el);
 });
+
+// Count-up animation for rating number
+var statNumber = document.querySelector('.reviews__stat-number');
+if (statNumber) {
+  var targetVal = parseFloat(statNumber.textContent);
+  statNumber.textContent = '0.0';
+  var countObserver = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting) {
+      var duration = 1400;
+      var startTime = null;
+      function step(ts) {
+        if (!startTime) startTime = ts;
+        var progress = Math.min((ts - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        statNumber.textContent = (eased * targetVal).toFixed(1);
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      countObserver.unobserve(statNumber);
+    }
+  }, { threshold: 0.6 });
+  countObserver.observe(statNumber);
+}
+
+// Parallax on hero background
+var heroBg = document.querySelector('.hero__bg');
+var hero = document.querySelector('.hero');
+if (heroBg && hero) {
+  window.addEventListener('scroll', function() {
+    var scrollY = window.scrollY;
+    if (scrollY < hero.offsetHeight) {
+      heroBg.style.transform = 'translateY(' + (scrollY * -0.18) + 'px)';
+    }
+  }, { passive: true });
+}
 
 // Nav scroll behavior — adds .scrolled class when page is scrolled
 var nav = document.getElementById('nav');

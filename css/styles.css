@@ -162,11 +162,56 @@ section {
   color: var(--red-dark);
 }
 
-/* Fade-in animation */
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+
+/* Hero entrance */
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero__title {
+  animation: heroIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+.hero__subtitle {
+  animation: heroIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+.hero__actions {
+  animation: heroIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+}
+.hero__hours--inline,
+.hero__hours--absolute {
+  animation: heroIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.65s both;
+}
+
+/* Pulsing green dot */
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 6px #4ade80, 0 0 0 0 rgba(74, 222, 128, 0.5); }
+  60%       { box-shadow: 0 0 6px #4ade80, 0 0 0 7px rgba(74, 222, 128, 0); }
+}
+
+.hero__hours-dot {
+  animation: pulseDot 2.4s ease-in-out infinite;
+}
+
+/* Section accent line draw */
+.draw-in {
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+.draw-in.visible {
+  transform: scaleX(1);
+}
+
+/* Scroll-triggered fade-up */
 .fade-in {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .fade-in.visible {
@@ -302,12 +347,31 @@ section {
   text-decoration: none;
   padding: 0.4rem 0.85rem;
   border-radius: 999px;
-  transition: color 0.15s ease, background 0.15s ease;
+  position: relative;
+  transition: color 0.18s ease, background 0.18s ease;
+}
+
+.nav__links a::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0.85rem;
+  right: 0.85rem;
+  height: 2px;
+  background: var(--red);
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .nav__links a:hover {
   color: var(--text);
   background: rgba(28, 18, 10, 0.06);
+}
+
+.nav__links a:hover::after {
+  transform: scaleX(1);
 }
 
 .nav__links a:focus-visible {
@@ -1484,15 +1548,70 @@ section {
   }
 }
 
+/* Slide from left variant */
+.fade-in--left {
+  opacity: 0;
+  transform: translateX(-36px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.fade-in--left.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Slide from right variant */
+.fade-in--right {
+  opacity: 0;
+  transform: translateX(36px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.fade-in--right.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger delays for specialty cards */
+.specialties__grid .fade-in:nth-child(2) { transition-delay: 0.12s; }
+.specialties__grid .fade-in:nth-child(3) { transition-delay: 0.24s; }
+
+/* Stagger delays for menu columns */
+.menu__grid .fade-in:nth-child(2) { transition-delay: 0.07s; }
+.menu__grid .fade-in:nth-child(3) { transition-delay: 0.14s; }
+.menu__grid .fade-in:nth-child(4) { transition-delay: 0.21s; }
+.menu__grid .fade-in:nth-child(5) { transition-delay: 0.28s; }
+.menu__grid .fade-in:nth-child(6) { transition-delay: 0.35s; }
+
 @media (prefers-reduced-motion: reduce) {
-  .fade-in {
+  .fade-in,
+  .fade-in--left,
+  .fade-in--right {
     opacity: 1;
     transform: none;
     transition: none;
   }
 
+  .hero__title,
+  .hero__subtitle,
+  .hero__actions,
+  .hero__hours--inline,
+  .hero__hours--absolute {
+    animation: none;
+    opacity: 1;
+  }
+
   .hero__scroll {
     animation: none;
+  }
+
+  .hero__hours-dot {
+    animation: none;
+  }
+
+  .draw-in {
+    transform: none;
+    transition: none;
   }
 
   .specialty-card {
