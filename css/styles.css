@@ -639,6 +639,7 @@ section {
   margin-top: 1.5rem;
   position: static;
   font-size: 0.8rem;
+  width: fit-content;
 }
 
 @media (max-width: 767px) {
@@ -646,7 +647,7 @@ section {
     display: none;
   }
   .hero__hours--inline {
-    display: flex;
+    display: inline-flex;
   }
 }
 
