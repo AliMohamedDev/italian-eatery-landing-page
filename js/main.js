@@ -92,12 +92,10 @@ if (reviewsWrap) {
 var themeToggle = document.getElementById('theme-toggle');
 var root = document.documentElement;
 
-// Load saved preference or system preference
+// Load saved preference, default to light
 var savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
   root.setAttribute('data-theme', savedTheme);
-} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  root.setAttribute('data-theme', 'dark');
 }
 
 if (themeToggle) {
