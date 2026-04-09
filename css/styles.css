@@ -743,6 +743,7 @@ section {
 
 .menu {
   background: var(--parchment);
+  padding-top: 1rem;
 }
 
 .menu__grid {
@@ -833,6 +834,7 @@ section {
 
 .specialties {
   background: var(--cream);
+  padding-top: 1rem;
 }
 
 .specialties__grid {
@@ -885,6 +887,7 @@ section {
   background: var(--parchment);
   position: relative;
   overflow: hidden;
+  padding-top: 1rem;
 }
 
 .reviews__stat {
@@ -1113,6 +1116,7 @@ section {
 
 .contact {
   background: var(--parchment);
+  padding-top: 1rem;
 }
 
 .contact__wrap {
