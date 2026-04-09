@@ -39,8 +39,16 @@
   <!-- 1. Hero -->
   <section class="hero" id="home">
     <div class="hero__overlay"></div>
+    <!-- Scattered icon pattern — right side of hero -->
+    <div class="ip-wrap" aria-hidden="true">
+      <img src="pizza.png"        alt="" style="width:185px; top:12%;  right:6%;  transform:rotate(14deg);">
+      <img src="sandwich.png"     alt="" style="width:162px; top:43%;  right:18%; transform:rotate(-9deg);">
+      <img src="coffeendonut.png" alt="" style="width:148px; bottom:14%; right:5%; transform:rotate(17deg);">
+      <img src="pizza.png"        alt="" style="width:88px;  top:7%;   right:38%; transform:rotate(-16deg); opacity:0.45;">
+      <img src="coffeendonut.png" alt="" style="width:82px;  bottom:9%; right:38%; transform:rotate(9deg);  opacity:0.45;">
+    </div>
     <div class="hero__content container">
-      <span class="badge badge--red-light">● Open Mon–Sat 10–7 &nbsp;·&nbsp; Sun 11–5</span>
+      <span class="badge badge--red-light">● Open Tue–Sat &nbsp;·&nbsp; 7 AM – 6 PM</span>
       <h1 class="hero__title">Cooking from<br>the Heart</h1>
       <p class="hero__subtitle">Homemade Italian, made fresh daily in Milton, ON</p>
       <div class="hero__actions">
@@ -53,6 +61,13 @@
 
   <!-- 2. Our Story -->
   <section class="story" id="story">
+    <!-- Subtle icon pattern in background -->
+    <div class="ip-wrap" aria-hidden="true">
+      <img src="coffeendonut.png" alt="" style="width:76px; top:6%;    left:2%;  transform:rotate(-13deg);">
+      <img src="pizza.png"        alt="" style="width:68px; top:10%;   right:3%; transform:rotate(16deg);">
+      <img src="sandwich.png"     alt="" style="width:72px; bottom:8%; left:4%;  transform:rotate(9deg);">
+      <img src="pizza.png"        alt="" style="width:65px; bottom:6%; right:2%; transform:rotate(-19deg);">
+    </div>
     <div class="container">
       <div class="story__grid fade-in">
         <div class="story__copy">
@@ -61,8 +76,8 @@
           <p class="story__text">We're a small family-run kitchen in the heart of Milton. We cook the way our family has always cooked: from scratch, every single day. No shortcuts. Just honest, homemade Italian food the way it was meant to taste.</p>
           <p class="story__text">Whether it's a perfectly layered lasagna, a crispy chicken parm, or a fresh donut still warm from the fryer, everything that leaves our kitchen starts with real ingredients and real care. We've been feeding Milton's families for years and we're not stopping anytime soon.</p>
         </div>
-        <div class="story__accent">
-          <p class="story__accent-quote">"Everything is made fresh.<br>Every single day."</p>
+        <div class="story__photo">
+          <img src="image.png" alt="Inside Main Street Italian Eatery">
         </div>
       </div>
     </div>
@@ -73,25 +88,22 @@
     <div class="container">
       <h2 class="section-title fade-in">Made Fresh Daily</h2>
       <div class="section-accent"></div>
-      <div class="menu__grid">
+      <div class="menu__grid menu__grid--3">
 
         <div class="menu__column fade-in">
-          <h3 class="menu__category">Pastas &amp; Mains</h3>
+          <h3 class="menu__category">Mains &amp; Pasta</h3>
           <ul class="menu__list">
-            <li class="menu__item"><span>Chicken Parmigiana</span><span class="menu__price">$13</span></li>
-            <li class="menu__item"><span>Veal Parmigiana</span><span class="menu__price">$14</span></li>
-            <li class="menu__item"><span>Homemade Lasagna</span><span class="menu__price">$12</span></li>
+            <li class="menu__item"><span>Chicken Parm</span><span class="menu__price">$13</span></li>
             <li class="menu__item"><span>Gnocchi</span><span class="menu__price">$11</span></li>
-            <li class="menu__item"><span>Tortellini in Rose Sauce</span><span class="menu__price">$12</span></li>
-            <li class="menu__item"><span>Eggplant Parmigiana</span><span class="menu__price">$10</span></li>
-            <li class="menu__item"><span>Penne Pasta</span><span class="menu__price">$9</span></li>
+            <li class="menu__item"><span>Manicotti</span><span class="menu__price">$12</span></li>
+            <li class="menu__item"><span>Penne</span><span class="menu__price">$9</span></li>
           </ul>
         </div>
 
         <div class="menu__column fade-in">
           <h3 class="menu__category">Sandwiches</h3>
           <ul class="menu__list">
-            <li class="menu__item"><span>Chicken Parm Sandwich</span><span class="menu__price">$9</span></li>
+            <li class="menu__item"><span>Grilled Cheese</span><span class="menu__price">$8</span></li>
             <li class="menu__item"><span>Veal Parm Sandwich</span><span class="menu__price">$10</span></li>
           </ul>
         </div>
@@ -100,26 +112,12 @@
           <h3 class="menu__category">Sides</h3>
           <ul class="menu__list">
             <li class="menu__item"><span>Roasted Potatoes</span><span class="menu__price">$5</span></li>
-            <li class="menu__item"><span>Rapini</span><span class="menu__price">$6</span></li>
-            <li class="menu__item"><span>Stuffed Peppers</span><span class="menu__price">$7</span></li>
             <li class="menu__item"><span>Tomato Cream Soup</span><span class="menu__price">$6</span></li>
-            <li class="menu__item"><span>Sauteed Mushrooms &amp; Onions</span><span class="menu__price">$5</span></li>
-          </ul>
-        </div>
-
-        <div class="menu__column fade-in">
-          <h3 class="menu__category">Sweets &amp; Coffee</h3>
-          <ul class="menu__list">
-            <li class="menu__item"><span>Fresh Donut (daily)</span><span class="menu__price">$2</span></li>
-            <li class="menu__item"><span>Chocolate Glazed Donut</span><span class="menu__price">$2</span></li>
-            <li class="menu__item"><span>Sprinkled Donut</span><span class="menu__price">$2</span></li>
-            <li class="menu__item"><span>Espresso</span><span class="menu__price">$3</span></li>
-            <li class="menu__item"><span>Coffee</span><span class="menu__price">$3</span></li>
           </ul>
         </div>
 
       </div>
-      <p class="menu__note">Menu changes daily. Call ahead to confirm availability. Cash only. ATM available on site.</p>
+      <p class="menu__note">Call ahead to confirm availability. Cash only — ATM available on site.</p>
     </div>
   </section>
 
@@ -131,18 +129,18 @@
       <div class="specialties__grid">
 
         <div class="specialty-card fade-in">
-          <h3 class="specialty-card__title">Chicken Parmigiana</h3>
+          <h3 class="specialty-card__title">Chicken Parm</h3>
           <p class="specialty-card__desc">Crispy breaded chicken smothered in homemade tomato sauce and melted cheese. A Milton staple. Regulars come back for it every week.</p>
         </div>
 
         <div class="specialty-card fade-in">
-          <h3 class="specialty-card__title">Homemade Lasagna</h3>
-          <p class="specialty-card__desc">Layered fresh daily with house-made meat sauce, ricotta, and mozzarella. The kind of lasagna you only get from someone who really knows how to cook.</p>
+          <h3 class="specialty-card__title">Homemade Gnocchi</h3>
+          <p class="specialty-card__desc">Soft, pillowy potato gnocchi made in-house and tossed in a rich tomato sauce. Comfort food at its finest.</p>
         </div>
 
         <div class="specialty-card fade-in">
-          <h3 class="specialty-card__title">Fresh Daily Donuts</h3>
-          <p class="specialty-card__desc">Made fresh every morning. Chocolate glazed, sprinkled, and more. They sell out fast. Come early and thank us later.</p>
+          <h3 class="specialty-card__title">Manicotti</h3>
+          <p class="specialty-card__desc">Pasta shells stuffed with fresh ricotta and baked in our homemade tomato sauce. Made from scratch, every single day.</p>
         </div>
 
       </div>
@@ -151,6 +149,14 @@
 
   <!-- 5. Reviews -->
   <section class="reviews" id="reviews">
+    <!-- Scattered icon pattern -->
+    <div class="ip-wrap" aria-hidden="true">
+      <img src="pizza.png"        alt="" style="width:78px; top:7%;    left:1%;  transform:rotate(11deg);">
+      <img src="sandwich.png"     alt="" style="width:68px; top:18%;   right:2%; transform:rotate(-13deg);">
+      <img src="coffeendonut.png" alt="" style="width:70px; bottom:10%; left:4%; transform:rotate(20deg);">
+      <img src="pizza.png"        alt="" style="width:72px; bottom:7%;  right:3%; transform:rotate(-8deg);">
+      <img src="sandwich.png"     alt="" style="width:60px; top:4%;    left:46%; transform:rotate(7deg);">
+    </div>
     <div class="container">
       <h2 class="section-title fade-in">What People Are Saying</h2>
       <div class="reviews__stat fade-in">
@@ -186,6 +192,12 @@
 
   <!-- 6. Visit Us -->
   <section class="visit" id="visit">
+    <!-- Scattered icon pattern -->
+    <div class="ip-wrap" aria-hidden="true">
+      <img src="sandwich.png"     alt="" style="width:70px; top:8%;    right:2%; transform:rotate(-11deg);">
+      <img src="coffeendonut.png" alt="" style="width:74px; bottom:12%; left:2%; transform:rotate(13deg);">
+      <img src="pizza.png"        alt="" style="width:65px; bottom:6%;  right:3%; transform:rotate(19deg);">
+    </div>
     <div class="container">
       <div class="visit__grid">
 
@@ -205,7 +217,7 @@
 
           <div class="visit__detail">
             <h3>Hours</h3>
-            <p>Mon &ndash; Sat: 10:00 AM &ndash; 7:00 PM<br>Sun: 11:00 AM &ndash; 5:00 PM</p>
+            <p>Tue &ndash; Sat: 7:00 AM &ndash; 6:00 PM<br>Closed Sun &amp; Mon</p>
           </div>
 
           <div class="visit__note">

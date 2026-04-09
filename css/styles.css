@@ -3,15 +3,16 @@
    ========================================= */
 
 :root {
-  --red: #DC2626;
-  --red-dark: #991B1B;
-  --red-light: #FEE2E2;
-  --green: #16A34A;
-  --gold: #D97706;
+  --red: #C24532;
+  --red-dark: #8C3220;
+  --red-light: #FDEBD4;
+  --green: #3D6B45;
+  --gold: #C98910;
   --surface: #FFFFFF;
-  --parchment: #FFF7ED;
-  --text: #111827;
-  --text-muted: #6B7280;
+  --cream: #FFF8F2;
+  --parchment: #FFF2E4;
+  --text: #1C120A;
+  --text-muted: #6B5E55;
   --font: 'Inter', sans-serif;
 }
 
@@ -32,7 +33,7 @@ html {
 body {
   font-family: var(--font);
   color: var(--text);
-  background: var(--surface);
+  background: var(--cream);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -59,13 +60,13 @@ section {
 
 .section-title {
   font-family: var(--font);
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 800;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 900;
   color: var(--text);
   text-align: center;
   margin-bottom: 0.75rem;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
 }
 
 .section-accent {
@@ -96,7 +97,7 @@ section {
 
 .badge--red-light {
   background: var(--red-light);
-  color: var(--red);
+  color: var(--red-dark);
 }
 
 /* Fade-in animation */
@@ -112,6 +113,29 @@ section {
 }
 
 /* =========================================
+   ICON PATTERN (scattered decorative polka-dot)
+   ========================================= */
+
+.ip-wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  user-select: none;
+}
+
+.ip-wrap img {
+  position: absolute;
+  display: block;
+  opacity: 0.11;
+}
+
+/* Hero icons are more visible (dark overlay behind them) */
+.hero .ip-wrap img {
+  opacity: 0.65;
+}
+
+/* =========================================
    NAVIGATION
    ========================================= */
 
@@ -119,16 +143,16 @@ section {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 248, 242, 0.96);
+  border-bottom: 1px solid rgba(28, 18, 10, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: box-shadow 0.2s ease;
 }
 
 .nav.scrolled {
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
-  background: #FFFFFF;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
+  background: var(--cream);
 }
 
 .nav__inner {
@@ -144,10 +168,11 @@ section {
 .nav__brand {
   font-family: var(--font);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text);
   text-decoration: none;
   white-space: nowrap;
+  letter-spacing: -0.01em;
 }
 
 .nav__links {
@@ -202,8 +227,8 @@ section {
 .nav__mobile {
   display: none;
   flex-direction: column;
-  background: #FFFFFF;
-  border-top: 1px solid rgba(17, 24, 39, 0.08);
+  background: var(--cream);
+  border-top: 1px solid rgba(28, 18, 10, 0.08);
   padding: 1rem 1.5rem 1.5rem;
 }
 
@@ -302,16 +327,27 @@ section {
   background-position: center;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 .hero__overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    135deg,
-    rgba(153, 27, 27, 0.88) 0%,
-    rgba(10, 10, 10, 0.25) 100%
+    to right,
+    rgba(12, 6, 2, 0.76) 0%,
+    rgba(12, 6, 2, 0.48) 40%,
+    rgba(12, 6, 2, 0.04) 100%
   );
+}
+
+@media (max-width: 767px) {
+  .hero .ip-wrap {
+    display: none;
+  }
+  .hero__overlay {
+    background: rgba(15, 8, 3, 0.52);
+  }
 }
 
 .hero__content {
@@ -324,12 +360,12 @@ section {
 
 .hero__title {
   font-family: var(--font);
-  font-size: clamp(2.75rem, 8vw, 5rem);
-  font-weight: 800;
-  line-height: 1.05;
+  font-size: clamp(2.75rem, 8vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.0;
   color: #FFFFFF;
   margin-bottom: 1rem;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
 }
 
 .hero__subtitle {
@@ -393,7 +429,9 @@ section {
    ========================================= */
 
 .story {
-  background: var(--surface);
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
 }
 
 .story__grid {
@@ -405,12 +443,12 @@ section {
 
 .story__title {
   font-family: var(--font);
-  font-size: clamp(1.75rem, 4vw, 2.6rem);
-  font-weight: 800;
+  font-size: clamp(1.85rem, 4vw, 2.8rem);
+  font-weight: 900;
   color: var(--text);
   margin-bottom: 1.5rem;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 
 .story__text {
@@ -424,33 +462,19 @@ section {
   margin-top: 1rem;
 }
 
-.story__accent {
-  position: relative;
-  background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 100%);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 2.5rem;
-  min-height: 280px;
+.story__photo {
+  border-radius: 16px;
   overflow: hidden;
+  min-height: 320px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14);
 }
 
-.story__accent::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.07) 0%, transparent 60%);
-}
-
-.story__accent-quote {
-  position: relative;
-  font-family: var(--font);
-  font-size: clamp(1.25rem, 3vw, 1.6rem);
-  font-weight: 700;
-  color: #FFFFFF;
-  text-align: center;
-  line-height: 1.5;
+.story__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 320px;
 }
 
 @media (min-width: 768px) {
@@ -476,7 +500,7 @@ section {
 .menu__column {
   background: var(--surface);
   border-radius: 12px;
-  padding: 1.75rem;
+  padding: 1.25rem 1.5rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
 }
 
@@ -502,8 +526,8 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 0.6rem 0;
-  font-size: 0.95rem;
+  padding: 0.45rem 0;
+  font-size: 0.9rem;
   border-bottom: 1px solid rgba(17, 24, 39, 0.08);
   gap: 1rem;
 }
@@ -533,9 +557,12 @@ section {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 860px) {
   .menu__grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .menu__grid--3 {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -544,7 +571,7 @@ section {
    ========================================= */
 
 .specialties {
-  background: var(--surface);
+  background: var(--cream);
 }
 
 .specialties__grid {
@@ -565,7 +592,7 @@ section {
 
 .specialty-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(220, 38, 38, 0.18);
+  box-shadow: 0 16px 32px rgba(192, 68, 45, 0.16);
   border-left: 3px solid var(--red);
 }
 
@@ -597,6 +624,8 @@ section {
 
 .reviews {
   background: var(--parchment);
+  position: relative;
+  overflow: hidden;
 }
 
 .reviews__stat {
@@ -683,7 +712,9 @@ section {
    ========================================= */
 
 .visit {
-  background: var(--surface);
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
 }
 
 .visit__grid {
@@ -695,12 +726,12 @@ section {
 
 .visit__title {
   font-family: var(--font);
-  font-size: clamp(1.75rem, 4vw, 2.6rem);
-  font-weight: 800;
+  font-size: clamp(1.85rem, 4vw, 2.8rem);
+  font-weight: 900;
   color: var(--text);
   margin-bottom: 2rem;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 
 .visit__detail {
@@ -708,17 +739,17 @@ section {
 }
 
 .visit__detail h3 {
-  font-size: 0.68rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--green);
-  margin-bottom: 0.35rem;
+  color: #8038B8;
+  margin-bottom: 0.4rem;
 }
 
 .visit__detail p,
 .visit__detail a {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text);
   text-decoration: none;
   line-height: 1.65;
