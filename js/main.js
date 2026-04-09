@@ -88,6 +88,38 @@ if (reviewsWrap) {
   });
 }
 
+// Reviews scroll dots
+var reviewsDots = document.getElementById('reviews-dots');
+if (reviewsWrap && reviewsDots) {
+  var cards = reviewsWrap.querySelectorAll('.review-card');
+  var numDots = cards.length;
+
+  // Build dots
+  for (var i = 0; i < numDots; i++) {
+    var dot = document.createElement('span');
+    dot.className = 'dot' + (i === 0 ? ' dot--active' : '');
+    (function(idx) {
+      dot.addEventListener('click', function() {
+        var card = cards[idx];
+        reviewsWrap.scrollTo({ left: card.offsetLeft - reviewsWrap.offsetLeft, behavior: 'smooth' });
+      });
+    })(i);
+    reviewsDots.appendChild(dot);
+  }
+
+  // Update active dot on scroll
+  reviewsWrap.addEventListener('scroll', function() {
+    var scrollPos = reviewsWrap.scrollLeft + reviewsWrap.offsetWidth / 2;
+    var active = 0;
+    cards.forEach(function(card, idx) {
+      if (card.offsetLeft <= scrollPos) active = idx;
+    });
+    reviewsDots.querySelectorAll('.dot').forEach(function(d, idx) {
+      d.classList.toggle('dot--active', idx === active);
+    });
+  }, { passive: true });
+}
+
 // Dark / light mode toggle
 var themeToggle = document.getElementById('theme-toggle');
 var root = document.documentElement;
