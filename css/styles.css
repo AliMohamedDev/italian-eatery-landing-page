@@ -649,6 +649,22 @@ section {
   .hero__hours--inline {
     display: inline-flex;
   }
+  .hero__scroll--absolute {
+    display: none;
+  }
+}
+
+.hero__scroll--inline {
+  display: none;
+  position: static;
+  transform: none;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 767px) {
+  .hero__scroll--inline {
+    display: inline-flex;
+  }
 }
 
 .hero__scroll {
