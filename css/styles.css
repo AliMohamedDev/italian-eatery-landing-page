@@ -198,13 +198,13 @@ section {
   opacity: 0.65;
 }
 
-/* In dark mode, invert scattered icons so they show on dark backgrounds */
+/* In dark mode, keep natural colors but reduce opacity to blend with dark backgrounds */
 [data-theme="dark"] .ip-wrap img {
-  filter: invert(1) opacity(0.15);
+  opacity: 0.18;
 }
 
 [data-theme="dark"] .hero .ip-wrap img {
-  filter: invert(1) opacity(0.5);
+  opacity: 0.45;
 }
 
 /* =========================================
