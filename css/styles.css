@@ -1401,12 +1401,7 @@ section {
   }
 
   .hero__actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .hero__actions .btn {
-    text-align: center;
+    display: none;
   }
 
   .story__accent {
