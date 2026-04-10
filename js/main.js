@@ -17,7 +17,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
   });
 });
 
-// Scroll-triggered animations (.fade-in, .fade-in--left, .fade-in--right, .draw-in)
+// Scroll-triggered animations (.fade-in, .fade-in--left, .fade-in--right)
 var observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
     if (entry.isIntersecting) {
@@ -30,8 +30,22 @@ var observer = new IntersectionObserver(function(entries) {
   rootMargin: '0px 0px -40px 0px'
 });
 
-document.querySelectorAll('.fade-in, .fade-in--left, .fade-in--right, .draw-in').forEach(function(el) {
+document.querySelectorAll('.fade-in, .fade-in--left, .fade-in--right').forEach(function(el) {
   observer.observe(el);
+});
+
+// Separate observer for .draw-in — uses threshold 0 since clip-path hides the element visually
+var drawObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      drawObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0, rootMargin: '0px 0px -20px 0px' });
+
+document.querySelectorAll('.draw-in').forEach(function(el) {
+  drawObserver.observe(el);
 });
 
 // Count-up animation for rating number
