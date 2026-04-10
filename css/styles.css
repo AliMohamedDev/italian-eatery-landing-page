@@ -203,12 +203,11 @@ section {
 
 /* Section accent line draw */
 .draw-in {
-  transform-origin: left center;
-  transform: scaleX(0);
-  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
 }
 .draw-in.visible {
-  transform: scaleX(1);
+  clip-path: inset(0 0% 0 0);
 }
 
 /* Scroll-triggered fade-up */
@@ -1823,7 +1822,7 @@ section {
   }
 
   .draw-in {
-    transform: none;
+    clip-path: none;
     transition: none;
   }
 
