@@ -241,9 +241,10 @@ if (themeToggle) {
   });
 }
 
-// Contact form — show success message on submit
+// Contact form — send via Web3Forms
 var contactForm = document.getElementById('contact-form');
 var contactSuccess = document.getElementById('contact-success');
+var contactSubmitBtn = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
 if (contactForm && contactSuccess) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -251,7 +252,40 @@ if (contactForm && contactSuccess) {
       contactForm.reportValidity();
       return;
     }
-    contactForm.style.display = 'none';
-    contactSuccess.style.display = 'flex';
+
+    var formData = new FormData(contactForm);
+    formData.append('access_key', 'REPLACE_WITH_WEB3FORMS_KEY');
+    formData.append('subject', 'New message from Main Street Italian Eatery website');
+
+    if (contactSubmitBtn) {
+      contactSubmitBtn.disabled = true;
+      contactSubmitBtn.textContent = 'Sending…';
+    }
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (data.success) {
+        contactForm.style.display = 'none';
+        contactSuccess.removeAttribute('hidden');
+        contactSuccess.style.display = 'flex';
+      } else {
+        if (contactSubmitBtn) {
+          contactSubmitBtn.disabled = false;
+          contactSubmitBtn.textContent = 'Send Message';
+        }
+        alert('Something went wrong. Please try calling us directly at (905) 878-2938.');
+      }
+    })
+    .catch(function() {
+      if (contactSubmitBtn) {
+        contactSubmitBtn.disabled = false;
+        contactSubmitBtn.textContent = 'Send Message';
+      }
+      alert('Something went wrong. Please try calling us directly at (905) 878-2938.');
+    });
   });
 }
