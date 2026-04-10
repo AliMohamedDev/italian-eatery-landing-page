@@ -154,7 +154,7 @@ if (reviewsWrap && reviewsDots) {
 
 // Section progress dots
 var sectionDots = document.getElementById('section-dots');
-var sectionIds = ['home', 'story', 'menu', 'specialties', 'catering', 'reviews', 'visit', 'contact'];
+var sectionIds = ['home', 'story', 'menu', 'specialties', 'reviews', 'visit', 'contact'];
 if (sectionDots) {
   var dots = sectionDots.querySelectorAll('.section-dots__dot');
 
