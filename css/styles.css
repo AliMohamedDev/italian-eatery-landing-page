@@ -1093,6 +1093,23 @@ section {
   flex: 0 0 300px;
 }
 
+@media (max-width: 767px) {
+  .review-card {
+    flex: 0 0 82vw;
+    min-width: 0;
+  }
+
+  .reviews__scroll-wrap {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .review-card {
+    scroll-snap-align: start;
+  }
+}
+
 /* =========================================
    VISIT US
    ========================================= */
