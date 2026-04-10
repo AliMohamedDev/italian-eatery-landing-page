@@ -773,7 +773,7 @@ section {
     max-width: 100%;
   }
   .hero__actions {
-    justify-content: center;
+    display: none;
   }
 }
 
@@ -1398,10 +1398,6 @@ section {
 
   .hero__subtitle {
     font-size: 0.95rem;
-  }
-
-  .hero__actions {
-    display: none;
   }
 
   .story__accent {
