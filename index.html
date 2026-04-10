@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Fredoka+One&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=17" />
+  <link rel="stylesheet" href="css/styles.css?v=18" />
 </head>
 <body>
 
@@ -377,15 +377,18 @@
             <div class="contact__field">
               <label for="contact-name">Your Name</label>
               <input type="text" id="contact-name" name="name" placeholder="e.g. Maria Rossi" autocomplete="name" required />
+              <span class="contact__error" id="error-name"></span>
             </div>
             <div class="contact__field">
               <label for="contact-email">Email Address</label>
               <input type="email" id="contact-email" name="email" placeholder="you@email.com" autocomplete="email" required />
+              <span class="contact__error" id="error-email"></span>
             </div>
           </div>
           <div class="contact__field">
             <label for="contact-message">Message</label>
             <textarea id="contact-message" name="message" rows="5" placeholder="Ask us a question, share feedback, or just say hello…" required></textarea>
+            <span class="contact__error" id="error-message"></span>
           </div>
           <div class="contact__footer">
             <button type="submit" class="btn btn--primary">Send Message</button>
@@ -402,14 +405,39 @@
   <!-- 8. Footer -->
   <footer class="footer">
     <div class="container">
-      <p class="footer__name">Main Street Italian Eatery</p>
-      <p class="footer__tagline">Homemade Italian, Milton's best-kept secret</p>
-      <div class="footer__divider"></div>
-      <p class="footer__phone"><a href="tel:+19058782938">(905) 878-2938</a></p>
-      <a href="https://www.instagram.com/mainstreetitalianeatery/" target="_blank" rel="noopener" class="footer__instagram" aria-label="Follow us on Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        @mainstreetitalianeatery
-      </a>
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="Italian_cooking_icon.svg.png" alt="" class="footer__logo" aria-hidden="true">
+          <div class="footer__brand-text">
+            <span class="footer__brand-top">Main Street</span>
+            <span class="footer__brand-bottom">Italian Eatery</span>
+          </div>
+        </div>
+        <div class="footer__cols">
+          <div class="footer__col">
+            <h4 class="footer__col-heading">Hours</h4>
+            <p>Tue &ndash; Sat</p>
+            <p>7:00 AM &ndash; 6:00 PM</p>
+            <p>Closed Sun &amp; Mon</p>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-heading">Find Us</h4>
+            <p>18 Thompson Rd N</p>
+            <p>Milton, ON L9T 2X5</p>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-heading">Get in Touch</h4>
+            <p><a href="tel:+19058782938">(905) 878-2938</a></p>
+            <a href="https://www.instagram.com/mainstreetitalianeatery/" target="_blank" rel="noopener" class="footer__instagram" aria-label="Follow us on Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              @mainstreetitalianeatery
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>Homemade Italian, Milton's best-kept secret &nbsp;·&nbsp; Cash only</p>
+      </div>
     </div>
   </footer>
 

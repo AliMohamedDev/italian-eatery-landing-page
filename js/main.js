@@ -259,13 +259,67 @@ if (themeToggle) {
 var contactForm = document.getElementById('contact-form');
 var contactSuccess = document.getElementById('contact-success');
 var contactSubmitBtn = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
+
+function setFieldError(inputId, errorId, msg) {
+  var input = document.getElementById(inputId);
+  var error = document.getElementById(errorId);
+  if (!input || !error) return;
+  if (msg) {
+    input.classList.add('input--error');
+    error.textContent = msg;
+  } else {
+    input.classList.remove('input--error');
+    error.textContent = '';
+  }
+}
+
+function validateForm() {
+  var valid = true;
+  var nameVal = document.getElementById('contact-name').value.trim();
+  var emailVal = document.getElementById('contact-email').value.trim();
+  var msgVal = document.getElementById('contact-message').value.trim();
+
+  if (!nameVal) {
+    setFieldError('contact-name', 'error-name', 'Please enter your name.');
+    valid = false;
+  } else {
+    setFieldError('contact-name', 'error-name', '');
+  }
+
+  if (!emailVal) {
+    setFieldError('contact-email', 'error-email', 'Please enter your email address.');
+    valid = false;
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+    setFieldError('contact-email', 'error-email', 'Please enter a valid email address.');
+    valid = false;
+  } else {
+    setFieldError('contact-email', 'error-email', '');
+  }
+
+  if (!msgVal) {
+    setFieldError('contact-message', 'error-message', 'Please write a message.');
+    valid = false;
+  } else {
+    setFieldError('contact-message', 'error-message', '');
+  }
+
+  return valid;
+}
+
+// Clear errors as user types
+if (contactForm) {
+  ['contact-name', 'contact-email', 'contact-message'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('input', function() {
+      setFieldError(id, 'error-' + id.replace('contact-', ''), '');
+    });
+  });
+}
+
 if (contactForm && contactSuccess) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    if (!contactForm.checkValidity()) {
-      contactForm.reportValidity();
-      return;
-    }
+    if (!validateForm()) return;
 
     var formData = new FormData(contactForm);
     formData.append('access_key', '680b0eaa-c3f4-418d-8289-625b2a540138');
