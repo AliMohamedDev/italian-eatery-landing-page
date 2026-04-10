@@ -302,6 +302,11 @@ section {
   margin-left: -3.75rem;
 }
 
+@media (max-width: 767px) {
+  .nav__brand {
+    margin-left: 0;
+}
+
 .nav__brand-logo {
   height: 62px;
   width: auto;
