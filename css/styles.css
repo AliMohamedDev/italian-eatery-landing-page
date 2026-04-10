@@ -771,14 +771,6 @@ section {
   50% { transform: translateX(-50%) translateY(8px); }
 }
 
-.hero__catering {
-  margin-top: 1rem;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.82);
-  letter-spacing: 0.01em;
-  line-height: 1.5;
-}
-
 @media (max-width: 767px) {
   .hero__content {
     text-align: center;
@@ -786,9 +778,6 @@ section {
   }
   .hero__actions {
     display: none;
-  }
-  .hero__catering {
-    font-size: 0.8rem;
   }
 }
 
@@ -990,6 +979,54 @@ section {
 @media (min-width: 768px) {
   .specialties__grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================================
+   CATERING STRIP
+   ========================================= */
+
+.catering-strip {
+  background: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.catering-strip__icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.catering-strip p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.catering-strip a {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+  .catering-strip {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1rem 1.5rem;
+  }
+  .catering-strip p {
+    font-size: 0.88rem;
   }
 }
 
