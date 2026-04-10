@@ -131,14 +131,6 @@ section {
   letter-spacing: -0.03em;
 }
 
-.section-accent {
-  width: 40px;
-  height: 3px;
-  background: var(--red);
-  margin: 0 auto 3rem;
-  border-radius: 2px;
-}
-
 /* Colorful badge component */
 .badge {
   display: inline-block;
