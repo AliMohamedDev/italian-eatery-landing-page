@@ -254,7 +254,7 @@ if (contactForm && contactSuccess) {
     }
 
     var formData = new FormData(contactForm);
-    formData.append('access_key', 'REPLACE_WITH_WEB3FORMS_KEY');
+    formData.append('access_key', '680b0eaa-c3f4-418d-8289-625b2a540138');
     formData.append('subject', 'New message from Main Street Italian Eatery website');
 
     if (contactSubmitBtn) {
