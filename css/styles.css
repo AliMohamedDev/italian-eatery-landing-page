@@ -986,6 +986,10 @@ section {
    CATERING STRIP
    ========================================= */
 
+[data-theme="dark"] .catering-strip {
+  background: var(--red-dark);
+}
+
 .catering-strip {
   background: var(--red);
   display: flex;
