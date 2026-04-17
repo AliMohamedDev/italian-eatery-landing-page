@@ -71,17 +71,6 @@ if (statNumber) {
   countObserver.observe(statNumber);
 }
 
-// Parallax on hero background
-var heroBg = document.querySelector('.hero__bg');
-var hero = document.querySelector('.hero');
-if (heroBg && hero) {
-  window.addEventListener('scroll', function() {
-    var scrollY = window.scrollY;
-    if (scrollY < hero.offsetHeight) {
-      heroBg.style.transform = 'translateY(' + (scrollY * -0.18) + 'px)';
-    }
-  }, { passive: true });
-}
 
 // Nav scroll behavior — adds .scrolled class when page is scrolled
 var nav = document.getElementById('nav');

@@ -177,6 +177,15 @@ section {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes heroBgIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.hero__bg {
+  animation: heroBgIn 1.4s ease 0s both;
+}
+
 .hero__title {
   animation: heroIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
 }
@@ -199,6 +208,25 @@ section {
 
 .hero__hours-dot {
   animation: pulseDot 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__bg,
+  .hero__title,
+  .hero__subtitle,
+  .hero__actions,
+  .hero__hours--inline,
+  .hero__hours--absolute {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .hero__hours-dot {
+    animation: none;
+  }
+  .hero__scroll {
+    animation: none;
+  }
 }
 
 /* Section accent line draw */
@@ -613,6 +641,7 @@ section {
 
 .hero {
   position: relative;
+  z-index: 1;
   height: 110vh;
   min-height: 700px;
   display: flex;
@@ -621,10 +650,11 @@ section {
 }
 
 .hero__bg {
-  position: absolute;
-  inset: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
   object-position: center 70%;
   z-index: 0;
@@ -652,6 +682,13 @@ section {
   }
   .hero__overlay {
     background: rgba(15, 8, 3, 0.52);
+  }
+  .hero__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -692,7 +729,6 @@ section {
   position: absolute;
   bottom: 9rem;
   left: 2rem;
-  z-index: 4;
   z-index: 3;
   display: inline-flex;
   align-items: center;
