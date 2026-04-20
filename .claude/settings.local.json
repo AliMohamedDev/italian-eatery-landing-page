@@ -11,7 +11,16 @@
       "Bash(git push:*)",
       "Bash(npx:*)",
       "WebSearch",
-      "WebFetch(domain:www.tripadvisor.com)"
+      "WebFetch(domain:www.tripadvisor.com)",
+      "Bash(/Users/alimohamed/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/scripts/start-server.sh:*)",
+      "Bash(/Users/alimohamed/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/scripts/start-server.sh:*)",
+      "Bash(/Users/alimohamed/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/scripts/stop-server.sh /Users/alimohamed/Documents/Claude/italian-eatery-landing-page/.superpowers/brainstorm/30094-1775741379)",
+      "Bash(ls:*)",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "Bash(git:*)",
+      "Bash(mdfind \"kMDItemKind == 'Application'\")",
+      "Bash(PLAYWRIGHT_BROWSERS_PATH=/Users/alimohamed/Library/Caches/ms-playwright npx playwright screenshot --browser chromium \"https://alimohameddev.github.io/italian-eatery-landing-page/\" /Users/alimohamed/Documents/Claude/italian-eatery-landing-page/upwork-screenshots/test.png)",
+      "Bash(gh auth *)"
     ]
   }
 }

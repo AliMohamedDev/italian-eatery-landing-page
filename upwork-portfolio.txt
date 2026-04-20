@@ -1,0 +1,23 @@
+Project Title:
+Restaurant Landing Page — Main Street Italian Eatery
+
+My Role:
+Front-End Web Developer & Designer
+
+Project Description (under 600 characters):
+Designed and built a fully custom static landing page for a family-run Italian restaurant in Milton, ON. The site features a hero section with parallax background, full menu with tabbed navigation, customer reviews carousel, Google Maps integration, and a working contact form with email delivery via Web3Forms. Includes dark mode, scroll-triggered animations, a sticky mobile call bar, and a fully responsive layout optimized for both desktop and mobile browsers. Deployed on GitHub Pages.
+
+Skills:
+HTML5, CSS3, Vanilla JavaScript, Responsive Web Design, UI/UX Design, Animation & Transitions, GitHub Pages, Web3Forms API Integration, Dark Mode Implementation, Mobile-First Development
+
+Deliverables:
+- Custom multi-section landing page (no templates or frameworks)
+- Fully responsive layout for desktop, tablet, and mobile
+- Dark / light mode toggle with localStorage persistence
+- Tabbed menu section with 6 categories
+- Horizontally scrollable reviews carousel with dot indicators
+- Working contact form with inline validation and email delivery
+- Scroll-triggered fade and draw-in animations
+- Parallax hero section with sticky navigation
+- Google Maps embed with location details
+- Deployed live site via GitHub Pages
