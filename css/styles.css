@@ -969,6 +969,20 @@ section {
   border-top: 3px solid var(--red);
 }
 
+.specialty-card::before {
+  content: "";
+  display: block;
+  height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='14'%3E%3Cline x1='0' y1='7' x2='108' y2='7' stroke='%23C0533A' stroke-width='1.5'/%3E%3Cpolygon points='120,1 127,7 120,13 113,7' fill='%23C0533A'/%3E%3Cline x1='132' y1='7' x2='240' y2='7' stroke='%23C0533A' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 0.75rem;
+}
+
+[data-theme="dark"] .specialty-card::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='14'%3E%3Cline x1='0' y1='7' x2='108' y2='7' stroke='%23D4614A' stroke-width='1.5'/%3E%3Cpolygon points='120,1 127,7 120,13 113,7' fill='%23D4614A'/%3E%3Cline x1='132' y1='7' x2='240' y2='7' stroke='%23D4614A' stroke-width='1.5'/%3E%3C/svg%3E");
+}
+
 .specialty-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 36px rgba(194, 69, 50, 0.15);
