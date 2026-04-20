@@ -996,6 +996,7 @@ section {
   margin-bottom: 0.75rem;
   line-height: 1.2;
   letter-spacing: -0.01em;
+  text-align: center;
 }
 
 .specialty-card__desc {
