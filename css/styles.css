@@ -1453,8 +1453,8 @@ section {
 }
 
 .footer__logo {
-  width: 52px;
-  height: 52px;
+  height: 62px;
+  width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
   opacity: 0.9;
@@ -1468,18 +1468,18 @@ section {
 
 .footer__brand-top {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.4rem;
+  font-size: 1.55rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--green);
   letter-spacing: 0.01em;
 }
 
 .footer__brand-bottom {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 700;
   font-style: italic;
-  color: #FDF6EE;
+  color: var(--red);
   letter-spacing: 0.01em;
 }
 
